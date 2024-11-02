@@ -4,14 +4,14 @@
 
 - Fork and clone [this repository](https://github.com/JoinCODED/JS-Arrays-Part1) to your `Development` folder.
   - ```bash
-    git clone git@github.com:<your_username>/TASK-JS-ArrowFunctions.git
+    git clone git@github.com:<your_username>/JS-Arrays-Part1.git
     ```
 
 ### Running The Tests
 
 - Install all the requirements:
   1.  Navigate to the project root (you'll find a file called `package.json` there).
-  2.  Install the requirments with the following command:
+  2.  Install the requirements with the following command:
       ```bash
         npm install
       ```
