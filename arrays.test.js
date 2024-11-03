@@ -23,7 +23,7 @@ function calculateComplexIndex(array) {
 function generateRandomItem() {
   return faker.food[
     ["fruit", "vegetable", "spice", "ingredient"][Math.floor(Math.random() * 4)]
-  ];
+  ]();
 }
 
 describe("Grocery Operations", () => {
@@ -56,7 +56,7 @@ describe("Grocery Operations", () => {
 
     it("should not change the size of the array", () => {
       const copy = [...groceries];
-      getLastGrocery(copy);
+      getLastGroceryItem(copy);
       expect(copy.length).toBe(6);
     });
   });
@@ -80,24 +80,27 @@ describe("Grocery Operations", () => {
     it("should add two new items to the groceries", () => {
       const copy = [...groceries];
       const randomItems = [generateRandomItem(), generateRandomItem()];
-      expect(
-        addNewGroceries(
-          copy,
-          randomItems[obscureIndex(copy, false)],
-          randomItems[obscureIndex(copy, true)]
-        ).length
-      ).toBe(8);
+      addNewGroceries(
+        copy,
+        randomItems[obscureIndex(copy, false)],
+        randomItems[obscureIndex(copy, true)]
+      );
+      expect(copy.length).toBe(8);
     });
 
     it("should add the items to the end of the array", () => {
       const copy = [...groceries];
       const randomItems = [generateRandomItem(), generateRandomItem()];
-      const [ultimateItem, penultimateItem] = addNewGroceries(
-        copy,
-        ...randomItems
-      ).reverse();
-      expect(ultimateItem).toBe(randomItems[obscureIndex(copy, false)]);
-      expect(penultimateItem).toBe(randomItems[obscureIndex(copy, true)]);
+      addNewGroceries(copy, ...randomItems);
+      const [ultimateItem, penultimateItem] = copy.reverse();
+      expect(penultimateItem).toBe(randomItems[obscureIndex(copy, false)]);
+      expect(ultimateItem).toBe(randomItems[obscureIndex(copy, true)]);
+    });
+
+    it("should return the modified array", () => {
+      const copy = [...groceries];
+      const randomItems = [generateRandomItem(), generateRandomItem()];
+      expect(addNewGroceries(copy, ...randomItems).length).toBe(8);
     });
   });
 
