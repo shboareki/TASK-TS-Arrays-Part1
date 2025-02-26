@@ -2,9 +2,9 @@
 
 ## Instructions
 
-- Fork and clone [this repository](https://github.com/JoinCODED/JS-Arrays-Part1) to your `Development` folder.
+- Fork and clone [this repository](https://github.com/JoinCODED/TS-Arrays-Part1) to your `Development` folder.
   - ```bash
-    git clone git@github.com:<your_username>/JS-Arrays-Part1.git
+    git clone git@github.com:<your_username>/TS-Arrays-Part1.git
     ```
 
 ### Running The Tests
