@@ -1,24 +1,29 @@
 import { faker } from "@faker-js/faker";
 
+import { createGroceries } from "../arrays";
 import {
   deleteThirdItem,
-  groceries,
   insertItemAtBeginning,
   replaceFirstTwoItems,
-} from "../arrays";
+} from "../challenge";
 
 function generateRandomItem() {
-  return faker.food[
-    ["fruit", "vegetable", "spice", "ingredient"][Math.floor(Math.random() * 4)]
-  ]();
+  return [
+    faker.food.fruit,
+    faker.food.vegetable,
+    faker.food.spice,
+    faker.food.ingredient,
+  ][Math.floor(Math.random() * 4)]();
 }
+
+const groceries = createGroceries();
 
 describe("🌶️🌶️🌶️ Challenges", () => {
   describe("deleteThirdItem", () => {
     it("should delete the third element from the array", () => {
       const copy = [...groceries];
       deleteThirdItem(copy);
-      expect(copy.includes(groceries[true + true])).toBe(false);
+      expect(copy.includes(groceries[+true + +true])).toBe(false);
     });
 
     it("should return the array without the element", () => {

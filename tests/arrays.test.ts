@@ -10,18 +10,21 @@ import {
   removeLastGroceryItem,
 } from "../arrays";
 
-function obscureIndex(array, modifier) {
-  return (array.length + modifier) % array.length;
+function obscureIndex(array: any[], modifier: boolean) {
+  return (array.length + +modifier) % array.length;
 }
 
-function calculateComplexIndex(array) {
+function calculateComplexIndex(array: any[]) {
   return (Math.floor(Math.sqrt(Math.pow(array.length, 2))) - 1) % array.length;
 }
 
 function generateRandomItem() {
-  return faker.food[
-    ["fruit", "vegetable", "spice", "ingredient"][Math.floor(Math.random() * 4)]
-  ]();
+  return [
+    faker.food.fruit,
+    faker.food.vegetable,
+    faker.food.spice,
+    faker.food.ingredient,
+  ][Math.floor(Math.random() * 4)]();
 }
 
 describe("Grocery Operations", () => {
@@ -89,7 +92,7 @@ describe("Grocery Operations", () => {
     it("should add the items to the end of the array", () => {
       const copy = [...groceries];
       const randomItems = [generateRandomItem(), generateRandomItem()];
-      addNewGroceries(copy, ...randomItems);
+      addNewGroceries(copy, randomItems[0], randomItems[1]);
       const [ultimateItem, penultimateItem] = copy.reverse();
       expect(penultimateItem).toBe(randomItems[obscureIndex(copy, false)]);
       expect(ultimateItem).toBe(randomItems[obscureIndex(copy, true)]);
@@ -98,7 +101,9 @@ describe("Grocery Operations", () => {
     it("should return the modified array", () => {
       const copy = [...groceries];
       const randomItems = [generateRandomItem(), generateRandomItem()];
-      expect(addNewGroceries(copy, ...randomItems).length).toBe(8);
+      expect(addNewGroceries(copy, randomItems[0], randomItems[1]).length).toBe(
+        8
+      );
     });
   });
 
