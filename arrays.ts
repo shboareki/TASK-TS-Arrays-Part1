@@ -78,11 +78,7 @@ function replaceFirstTwoItems(groceries: string[]): string[] {
   return [];
 }
 
-// DO NOT CHANGE THE LINE OF CODE BELOW
-const groceries = createGroceries();
-
 export {
-  groceries,
   createGroceries,
   getSecondGroceryItem,
   getGroceriesCount,

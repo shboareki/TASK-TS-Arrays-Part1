@@ -2,11 +2,11 @@ import { faker } from "@faker-js/faker";
 
 import {
   addNewGroceries,
+  createGroceries,
   getFirstThreeGroceryItems,
   getGroceriesCount,
   getLastGroceryItem,
   getSecondGroceryItem,
-  groceries,
   removeLastGroceryItem,
 } from "../arrays";
 
@@ -27,11 +27,15 @@ function generateRandomItem() {
   ][Math.floor(Math.random() * 4)]();
 }
 
+const groceries = Array(6)
+  .fill("")
+  .map(() => generateRandomItem());
+
 describe("Grocery Operations", () => {
   describe("createGroceries", () => {
     it("should return an array of 6 grocery items in it", () => {
-      const copy = [...groceries];
-      expect(copy.length).toBe(6);
+      const yourGroceries = createGroceries();
+      expect(yourGroceries).toBe(6);
     });
   });
 

@@ -16,7 +16,9 @@ function generateRandomItem() {
   ][Math.floor(Math.random() * 4)]();
 }
 
-const groceries = createGroceries();
+const groceries = Array(6)
+  .fill("")
+  .map(() => generateRandomItem());
 
 describe("🌶️🌶️🌶️ Challenges", () => {
   describe("deleteThirdItem", () => {
