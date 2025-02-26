@@ -6,38 +6,42 @@ function createGroceries() {
 
 // Step 2:
 // Write a getSecondGroceryItem function that returns the second grocery item from `groceries` argument
-function getSecondGroceryItem(groceries) {
+function getSecondGroceryItem(groceries: string[]) {
   // write your code here...
 }
 
 // Step 3:
 // Write a getGroceriesCount that returns the length of the `groceries` argument
-function getGroceriesCount(groceries) {
+function getGroceriesCount(groceries: string[]) {
   // write your code here...
 }
 
 // Step 4:
 // Write a getLastGroceryItem function that returns the last grocery item from `groceries` argument
-function getLastGroceryItem(groceries) {
+function getLastGroceryItem(groceries: string[]) {
   // write your code here...
 }
 
 // Step 5:
 // Write a removeLastGroceryItem function that removes the last grocery item and return it
-function removeLastGroceryItem(groceries) {
+function removeLastGroceryItem(groceries: string[]) {
   // write your code here...
 }
 
 // Step 6:
 // Write a addNewGroceries function that adds two new and different grocery items to the end of the groceries argument
 // and returns the modified array
-function addNewGroceries(groceries, itemOne, itemTwo) {
+function addNewGroceries(
+  groceries: string[],
+  itemOne: string,
+  itemTwo: string
+) {
   // write your code here...
 }
 
 // Step 7:
 // Write a getFirstThreeGroceryItems function that returns a new array that contains the first three grocery items
-function getFirstThreeGroceryItems(groceries) {
+function getFirstThreeGroceryItems(groceries: string[]) {
   // write your code here...
 }
 
@@ -46,28 +50,28 @@ function getFirstThreeGroceryItems(groceries) {
 // Step 1:
 // Write a deleteThirdItem function that deletes the third item from the groceries argument
 // and returns the modified groceries list
-function deleteThirdItem(groceries) {
+function deleteThirdItem(groceries: string[]) {
   // write your code here...
 }
 
 // Step 2:
 // Write a insertItemAtBeginning function that inserts a new grocery item at the beginning of the groceries argument
 // and returns the modified groceries array
-function insertItemAtBeginning(groceries, item) {
+function insertItemAtBeginning(groceries: string[], item: string) {
   // write your code here...
 }
 
 // Step 3:
 // Write a replaceFirstTwoItems function that replace the first two elements with 'ketchup' and 'chili'
 // and return the modified groceries array
-function replaceFirstTwoItems(groceries) {
+function replaceFirstTwoItems(groceries: string[]) {
   // write your code here...
 }
 
 // DO NOT CHANGE THE LINE OF CODE BELOW
 const groceries = createGroceries();
 
-module.exports = {
+export {
   groceries,
   createGroceries,
   getSecondGroceryItem,

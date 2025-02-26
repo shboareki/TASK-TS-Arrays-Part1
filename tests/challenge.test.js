@@ -1,10 +1,11 @@
-const { faker } = require("@faker-js/faker");
-const {
+import { faker } from "@faker-js/faker";
+
+import {
   deleteThirdItem,
-  insertItemAtBeginning,
   groceries,
+  insertItemAtBeginning,
   replaceFirstTwoItems,
-} = require("./arrays");
+} from "../arrays";
 
 function generateRandomItem() {
   return faker.food[
@@ -12,11 +13,7 @@ function generateRandomItem() {
   ]();
 }
 
-/**
- * To attempt the challenge,
- * remove the "x" from "xdescribe" 👇🏼
- */
-xdescribe("🌶️🌶️🌶️ Challenges", () => {
+describe("🌶️🌶️🌶️ Challenges", () => {
   describe("deleteThirdItem", () => {
     it("should delete the third element from the array", () => {
       const copy = [...groceries];

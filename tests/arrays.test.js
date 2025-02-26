@@ -1,16 +1,14 @@
-const { faker } = require("@faker-js/faker");
-const {
-  groceries,
-  getGroceriesCount,
-  getLastGroceryItem,
-  removeLastGroceryItem,
+import { faker } from "@faker-js/faker";
+
+import {
   addNewGroceries,
   getFirstThreeGroceryItems,
-  deleteThirdElement,
-  insertAtBeginning,
-  replaceFirstTwo,
+  getGroceriesCount,
+  getLastGroceryItem,
   getSecondGroceryItem,
-} = require("./arrays");
+  groceries,
+  removeLastGroceryItem,
+} from "../arrays";
 
 function obscureIndex(array, modifier) {
   return (array.length + modifier) % array.length;
