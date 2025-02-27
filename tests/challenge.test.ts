@@ -1,6 +1,4 @@
 import { faker } from "@faker-js/faker";
-
-import { createGroceries } from "../arrays";
 import {
   deleteThirdItem,
   insertItemAtBeginning,
