@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+
 import {
   addNewGroceries,
   createGroceries,
@@ -7,7 +8,7 @@ import {
   getLastGroceryItem,
   getSecondGroceryItem,
   removeLastGroceryItem,
-} from "../arrays";
+} from "../groceries";
 
 function obscureIndex(array: any[], modifier: boolean) {
   return (array.length + +modifier) % array.length;
@@ -30,7 +31,7 @@ const groceries = Array(6)
   .fill("")
   .map(() => generateRandomItem());
 
-describe("Grocery Operations", () => {
+describe("Groceries", () => {
   describe("createGroceries", () => {
     it("should return an array of 6 grocery items in it", () => {
       const yourGroceries = createGroceries();
@@ -58,7 +59,7 @@ describe("Grocery Operations", () => {
       expect(getLastGroceryItem([...groceries])).toBe(groceries[complexIndex]);
     });
 
-    it("should not change the size of the array", () => {
+    it("should not change the size of the original array", () => {
       const copy = [...groceries];
       getLastGroceryItem(copy);
       expect(copy.length).toBe(6);
