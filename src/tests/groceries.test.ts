@@ -35,7 +35,7 @@ describe("Groceries", () => {
   describe("createGroceries", () => {
     it("should return an array of 6 grocery items in it", () => {
       const yourGroceries = createGroceries();
-      expect(yourGroceries).toBe(6);
+      expect(yourGroceries.length).toBe(6);
     });
   });
 
